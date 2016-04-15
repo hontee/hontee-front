@@ -2,7 +2,8 @@ $(function () {
 
   var $wndw = $(window),
     $body = $('body'),
-    $both = $('body, html');
+    $both = $('body, html'),
+    $mmenu = $("#mmenu");
 
   String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
@@ -78,14 +79,14 @@ $(function () {
 
   //	The menu
   if ($.fn.mmenu) {
-    var API = $('#menu').mmenu({
+    var API = $mmenu.mmenu({
       extensions: ['widescreen'],
       counters: true,
       dividers: {
         fixed: true
       },
       navbar: {
-        title: '所有分类'
+        title: '<a href="/">快吧分类</a>'
       },
       navbars: [{
         position: 'top'

@@ -161,6 +161,65 @@ CMS.batchDeleteSubmitHandler = function($obj, uri) {
     });
   }
 }
+
+/**
+ * 精选
+ * @param $obj EL對象
+ * @param uri 请求名称 如:platforms
+ */ 
+CMS.pickSubmitHandler = function($obj, uri) {
+  var rows = $obj.dg.datagrid('getSelections');
+  if (rows.length > 0) {
+    var ids = new Array(rows.length);
+    for (var i = 0; i < rows.length; i++) {
+      ids[i] = rows[i].id;
+    }
+	$.messager.confirm(CMS.msg.info, "确定设为精选？", function(ok){
+      if (ok){
+        var url = '/cms/' + uri + '/pick?ids=' + ids;
+        $.post(url, function(data) {
+          var r = $.parseJSON(data);
+          if (r.success) {
+        	CMS.showMsg(CMS.msg.info, "已设为精选");
+            CMS.reload($obj);
+          } else {
+            $.messager.alert(CMS.msg.removeF, r.error.message, "error");
+          }
+        });
+      } 
+    });
+  }
+}
+
+/**
+ * 精选
+ * @param $obj EL對象
+ * @param uri 请求名称 如:platforms
+ */ 
+CMS.unpickSubmitHandler = function($obj, uri) {
+  var rows = $obj.dg.datagrid('getSelections');
+  if (rows.length > 0) {
+    var ids = new Array(rows.length);
+    for (var i = 0; i < rows.length; i++) {
+      ids[i] = rows[i].id;
+    }
+	$.messager.confirm(CMS.msg.info, "确定取消精选？", function(ok){
+      if (ok){
+        var url = '/cms/' + uri + '/unpick?ids=' + ids;
+        $.post(url, function(data) {
+          var r = $.parseJSON(data);
+          if (r.success) {
+        	CMS.showMsg(CMS.msg.info, "已取消精选");
+            CMS.reload($obj);
+          } else {
+            $.messager.alert(CMS.msg.removeF, r.error.message, "error");
+          }
+        });
+      } 
+    });
+  }
+}
+
 /**
 * 更新统计
 * @param $obj EL对象
