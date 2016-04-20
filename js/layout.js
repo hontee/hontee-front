@@ -86,7 +86,7 @@ $(function () {
         fixed: true
       },
       navbar: {
-        title: '<a href="/">快吧分类</a>'
+        title: '<a href="/">所有类别</a>'
       },
       navbars: [{
         position: 'top'
