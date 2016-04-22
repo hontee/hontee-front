@@ -219,25 +219,3 @@ CMS.unpickSubmitHandler = function($obj, uri) {
     });
   }
 }
-
-/**
-* 更新统计
-* @param $obj EL对象
-* @param uri 请求名称 如:platforms
-*/
-CMS.countSubmitHandler = function($obj, uri) {
-   $.messager.confirm("信息提示", "预计完成统计需要花费几分钟的时间，确定继续？", function(ok){
-     if (ok){
-       var url = '/cms/' + uri + '/count/task';
-       $.post(url, function(data) {
-         var r = $.parseJSON(data);
-         if (r.success) {
-           CMS.showMsg("信息提示", "更新统计完成");
-           CMS.reload($obj);
-         } else {
-           $.messager.alert("信息提示", "更新统计失败", "error");
-         }
-       });
-     } 
-   });
-}
