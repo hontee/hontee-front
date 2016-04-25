@@ -86,7 +86,7 @@ $(function () {
         fixed: true
       },
       navbar: {
-        title: '<a href="/">所有类别</a>'
+        title: '所有类别'
       },
       navbars: [{
         position: 'top'
