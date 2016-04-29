@@ -3,7 +3,8 @@ $(function () {
   var $wndw = $(window),
     $body = $('body'),
     $both = $('body, html'),
-    $mmenu = $("#mmenu");
+    $mmenu = $("#mmenu"),
+    $htuser = $("meta[property='ht:user']").attr('content');
 
   String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
@@ -105,7 +106,7 @@ $(function () {
   if(followEl.follow) {
     followEl.follow.click(function() {
       // 判断用户是否登录
-      if (1==1) {
+      if ($htuser) {
         var href = followEl.follow.attr("data-href");
         var star = followEl.star.text();
         var num = new Number(star);
@@ -134,7 +135,7 @@ $(function () {
       var follow = $(this);
       follow.click(function() {
         // 判断用户是否登录
-        if (1==1) {
+        if ($htuser) {
           var href = follow.attr("data-href");
           var star = follow.parent().find("[data-follow='star']");
           var num = new Number(star.text());
