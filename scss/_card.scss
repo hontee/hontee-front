@@ -1,0 +1,116 @@
+//
+// Card
+//
+
+.card {
+  position: relative;
+  margin-bottom: $spacer4;
+  border: $border-width solid $border-color;
+  border-radius: $border-radius;
+
+  &:hover,
+  &:focus {
+    border-color: #51a7e8;
+    outline: none;
+
+    > a {
+      .card-text {
+        color: $text-gray-light;
+      }
+    }
+
+    .card-title {
+      color: $text-blue;
+    }
+  }
+
+  // 内容块：带padding的块
+  .card-block {
+    padding: $spacer3;
+  }
+
+  // 标题
+  .card-title {
+    margin-top: $spacer1;
+    margin-bottom: $spacer2;
+    font-size: 18px;
+    color: $text-gray-dark;
+  }
+
+  // Card中的内容
+  .card-text:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// 瀑布流布局
+.card-columns {
+  column-count: 3;
+  column-gap: $spacer4;
+
+  .card {
+    display: inline-block;
+    width: 100%; // Don't let them exceed the column width
+  }
+}
+
+// 底部
+.card-footer {
+  padding: 10px 0;
+  border-top: $border-width solid $bg-gray;
+  display: block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  color: $text-gray;
+
+  &:last-child {
+    border-radius: 0 0 $border-radius $border-radius;
+  }
+
+  &:hover,
+  &:focus {
+    color: $text-blue;
+  }
+}
+
+// Card image
+// Card image caps
+.card-img,
+.card-img-top,
+.card-img-bottom {
+  display: block;
+  width: 100%;
+}
+.card-img {
+  border-radius:$border-radius;
+}
+.card-img-top {
+  border-radius: $border-radius $border-radius 0 0;
+}
+.card-img-bottom {
+  border-radius: 0 0 $border-radius $border-radius;
+}
+
+//
+// Card set
+// 使每个Card高度相等
+//
+.card-deck-wrapper {
+  margin-right: -$spacer4;
+  margin-left: -$spacer4;
+}
+.card-deck {
+  display: table;
+  table-layout: fixed;
+  border-spacing: $spacer4 0;
+
+  .card {
+    display: table-cell;
+    width: 1%;
+    vertical-align: top;
+  }
+}

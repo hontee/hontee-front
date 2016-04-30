@@ -1,0 +1,26 @@
+// Needs refactoring
+// scss-lint:disable NestingDepth
+.blankslate {
+  position: relative;
+  padding-top: 20px;
+  // background-color: #fafafa;
+  // border-bottom: 1px solid #e5e5e5;
+
+  // 显示描述内容
+  p {
+    font-size: 16px;
+    color: $text-gray-light;
+  }
+
+  // 显示关注·站点·更新等信息
+  footer {
+    color: $text-gray-light;
+  }
+
+  // 结合Media组件的.media-object类一起使用
+  // 头像大小：100*100px
+  img.media-object {
+    width: 100px;
+    height: 100px;
+  }
+}
