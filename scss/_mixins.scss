@@ -23,13 +23,3 @@
   text-indent: 100%;
   white-space: nowrap;
 }
-
-// 链接和获得焦点时的响应
-//
-@mixin hover {
-  &:focus,
-  &:hover {
-    @content
-  }
-}
-

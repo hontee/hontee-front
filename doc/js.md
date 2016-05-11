@@ -5,6 +5,10 @@ table of contents](TOC.md)
 
 Information about the default JavaScript included in the project.
 
+- [前端组件库大合集](http://www.xuanfengge.com/he-sets-the-front-end-component-library-the-essential-collection.html)
+- [nice validator](http://validator.niceue.com/)
+- [taggingJS](https://github.com/sniperwolf/taggingJS)
+
 ## main.js
 
 This file can be used to contain or reference your site/app JavaScript code.
